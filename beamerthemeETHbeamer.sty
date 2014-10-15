@@ -92,8 +92,6 @@
 \setbeamercolor*{frametitle}{fg=black}
 \setbeamercolor*{block title}{fg=black}
 \setbeamercolor*{block title example}{fg=black}
-%\setbeamercolor*{block body}{bg=MedianUltraLightOrange}
-%\setbeamercolor*{block body example}{bg=MedianUltraLightOrange}
 \setbeamercolor*{section in toc}{fg=black}
 \setbeamercolor*{section page}{fg=black}
 
@@ -101,9 +99,6 @@
 \setbeamerfont{title}{size=\Large,series=\bfseries}
 \setbeamerfont{author}{size=\small}
 \setbeamerfont{date}{size=\Large}
-
-%\setbeamertemplate{sections/subsections in toc}[none]
-
 
 \newenvironment{xplainframe}{\bgroup\begin{frame}[plain]}{\end{frame}\egroup}
 
@@ -252,13 +247,13 @@
 }
 
 %TODO
-\setbeamertemplate{section page}{
-	\begin{textblock*}{12cm}(0.8cm,-0.9cm)
-		\begin{beamercolorbox}{section page}
-			\insertsectionhead
-		\end{beamercolorbox}
-	\end{textblock*}
-}
+%\setbeamertemplate{section page}{
+%	\begin{textblock*}{12cm}(0.8cm,-0.9cm)
+%		\begin{beamercolorbox}{section page}
+%			\insertsectionhead
+%		\end{beamercolorbox}
+%	\end{textblock*}
+%}
 
 
 \setbeamertemplate{frametitle}{
@@ -304,8 +299,7 @@
 % === decoration
 \usetikzlibrary{decorations.pathmorphing,shadows}
 % === box
-\newcommand*{\ETHbox}[2]{% width, content
-	%\par\noindent
+\newcommand*{\ETHbox}[2]{
 	\vspace{1em}
 	\begin{tikzpicture}[ETHnodestyle/.style={rectangle,rounded
             corners,draw=ETHdarkgray!40!white,
@@ -316,7 +310,6 @@
 			\end{minipage}%
 		    };
 	\end{tikzpicture}%	
-	%\par\vspace{-1.3em}
 }
 % === labels
 \newcommand*{\ETHitem}{\raisebox{1pt}{\tikz\fill[sharp
