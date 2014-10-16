@@ -1,9 +1,9 @@
 %==============================================================================
 %
-% ETHbeamer 1.0
+% ETHbeamer 1.0.1
 % Based on ETH corporate design
 % Created by Karl Wuest
-% 2014-10-14
+% 2014-10-16
 %
 %==============================================================================
 
@@ -231,21 +231,16 @@
 
 \setbeamertemplate{title page}{
 \setbeamertemplate{background}[title page]
-	\begin{textblock*}{12cm}(-0.4cm,1.8cm)
-    \begin{beamercolorbox}[wd=8cm]{title page header}
+\begin{textblock*}{\textwidth}(-0.3cm,1.8cm)
+    \begin{beamercolorbox}{title page header}
       \usebeamerfont{title}\usebeamercolor{title}\inserttitle%
     \end{beamercolorbox}%
-    \end{textblock*}
-%    \begin{textblock*}{9cm}(-0.5cm,5cm)
-%		\begin{beamercolorbox}{date}
-%	      \usebeamerfont{date}\insertdate%
-%	    \end{beamercolorbox}
-%    \end{textblock*}
-    \begin{textblock*}{9cm}(-0.4cm,2.8cm)
+    
+\vspace{0.2cm}
 	    \begin{beamercolorbox}{author}
 	      \usebeamerfont{author}\insertauthor%
     	\end{beamercolorbox}
-    \end{textblock*}
+\end{textblock*}
 }
 
 %TODO
