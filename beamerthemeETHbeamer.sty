@@ -84,8 +84,8 @@
 \colorlet{ETHcolor1}{ETHc}
 \colorlet{ETHcolor2}{ETHc}
 
-\setbeamercolor*{title page header}{fg=white}
-\setbeamercolor*{title}{fg=white}
+%\setbeamercolor*{title page header}{fg=white}
+%\setbeamercolor*{title}{fg=white}
 \setbeamercolor*{author}{fg=white}
 \setbeamercolor*{date}{fg=white}
 \setbeamercolor*{item}{fg=black}
@@ -139,6 +139,8 @@
 % === title frame background =========================================================
 
 \newcommand{\settitlebg}{
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{title}{fg=white}
 \setbeamertemplate{background}
 {
     \begin{tikzpicture}
@@ -229,7 +231,7 @@
 
 \setbeamertemplate{title page}{
 \setbeamertemplate{background}[title page]
-	\begin{textblock*}{12cm}(-0.5cm,1.8cm)
+	\begin{textblock*}{12cm}(-0.4cm,1.8cm)
     \begin{beamercolorbox}[wd=8cm]{title page header}
       \usebeamerfont{title}\usebeamercolor{title}\inserttitle%
     \end{beamercolorbox}%
@@ -239,7 +241,7 @@
 %	      \usebeamerfont{date}\insertdate%
 %	    \end{beamercolorbox}
 %    \end{textblock*}
-    \begin{textblock*}{9cm}(-0.5cm,2.8cm)
+    \begin{textblock*}{9cm}(-0.4cm,2.8cm)
 	    \begin{beamercolorbox}{author}
 	      \usebeamerfont{author}\insertauthor%
     	\end{beamercolorbox}
