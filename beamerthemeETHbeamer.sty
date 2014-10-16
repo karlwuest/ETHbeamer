@@ -1,12 +1,17 @@
 %==============================================================================
 %
-% ETHbeamer 1.0.1
+% ETHbeamer 1.0.2
 % Based on ETH corporate design
 % Created by Karl Wuest
 % 2014-10-16
 %
 %==============================================================================
 
+
+% === optional department logo ================================================
+
+\newif\ifdeplogo    
+\deplogotrue 				% Department-Logo for leftside footer
 
 % === font ====================================================================
 \usepackage[T1]{fontenc}% for correct hyphenation and T1 encoding
@@ -268,7 +273,9 @@
   \leavevmode%
   \hbox{%
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=2ex,left]{fg=black,bg=white}%
+  \ifdeplogo
     \hspace*{4.5mm}\includegraphics[height=1.8ex]{\deplogo}
+  \fi
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=2ex,right]{fg=black,bg=white}%
     \usebeamerfont{author in head/foot}\insertshortauthor
