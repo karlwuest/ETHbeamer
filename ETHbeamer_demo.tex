@@ -1,13 +1,6 @@
 \documentclass{beamer}
 \usepackage{etex}
 \reserveinserts{28}
-\usepackage{amsmath, amsfonts, epsfig, xspace}
-\usepackage{algorithm,algorithmic}
-\usepackage{pstricks,pst-node}
-\usepackage{multimedia}
-\usepackage[normal,tight,center]{subfigure}
-\setlength{\subfigcapskip}{-.5em}
-%\usepackage{beamerthemesplit}
 \usetheme{ETHbeamer}
 
 \colorlet{ETHcolor1}{ETHc}
@@ -88,10 +81,15 @@ Please use no more then two of them in your presentation. The first two (counted
 \end{proof}
 \end{frame}
 
-\begin{frame}
-\frametitle{Title Page}
-The title page is created using the \texttt{\textbackslash titleframe} command.
-\end{frame}
+\begin{titlestyleframe}
+\vspace*{4.3cm}
+{\Large \color{white} Title Page}
+
+\vspace*{0.2cm}
+\color{white} The title page is created using the \texttt{\textbackslash titleframe} command.
+
+The title page background can also be used on other frames (or for a customised title frame) using the \texttt{titlestyleframe} environment.
+\end{titlestyleframe}
 
 \begin{frame}
 \frametitle{Normal Frame}

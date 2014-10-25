@@ -1,9 +1,10 @@
 %==============================================================================
 %
-% ETHbeamer 1.0.2
-% Based on ETH corporate design
 % Created by Karl Wuest
-% 2014-10-16
+% ETHbeamer 1.0.3
+% 2014-10-25
+% ETH corporate design
+% Based on LaTex ETH Presentation Template by Dieter Henning
 %
 %==============================================================================
 
@@ -34,26 +35,6 @@
 
 \usepackage{tikz, datetime, textpos}
 \usepackage{calc}
-
-%\DeclareOption{beteckna}{
-%	\setsansfont[Ligatures=TeX, 
-%				 Extension=.ttf,
-%				 BoldFont=*Bold,
-%				 ItalicFont=*Italic
-%				 ]{BetecknaLowerCase}
-%}
-%\ProcessOptions
-%\yyyymmdddate \renewcommand{\dateseparator}{.}
-
-% === toc style ===============================================================
-%\makeatletter
-%    \newtocstyle[noonewithdot]{nodotnopagenumber}{
-%    % define tocstyle without dots and page numbers
-%            \settocfeature{pagenumberbox}{\@gobble}
-%    }
-%\makeatother
-%\usetocstyle{nodotnopagenumber}
-
 
 % ====  new colours  ===========================================================
 
@@ -168,10 +149,21 @@
 }
 }
 
+
 \newcommand{\titleframe}{
   \settitlebg
   \frame{\maketitle}
   \setdefaultbg  
+}
+
+
+\newenvironment{titlestyleframe}{
+\settitlebg
+\begin{frame}
+}
+{
+\end{frame}
+\setdefaultbg
 }
 
 
@@ -234,7 +226,7 @@
 
 
 
-% === title page layout =================================================
+% === title page layout ==============================================================
 
 \setbeamertemplate{title page}{
 \setbeamertemplate{background}[title page]
@@ -250,15 +242,7 @@
 \end{textblock*}
 }
 
-%TODO
-%\setbeamertemplate{section page}{
-%	\begin{textblock*}{12cm}(0.8cm,-0.9cm)
-%		\begin{beamercolorbox}{section page}
-%			\insertsectionhead
-%		\end{beamercolorbox}
-%	\end{textblock*}
-%}
-
+% === frametitle ======================================================================
 
 \setbeamertemplate{frametitle}{
 	\vspace{1cm}
