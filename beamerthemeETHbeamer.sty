@@ -25,6 +25,8 @@
 
 % === math packages ===========================================================
 \usepackage{amsthm}     % theorem environments
+\newcommand{\hmmax}{0}
+\newcommand{\bmmax}{3}
 \usepackage{bm}         % for bold math symbols
 
 % === colors ==================================================================
@@ -248,8 +250,15 @@
 \end{textblock*}
 }
 
+%TODO
+%\setbeamertemplate{section page}{
+%	\begin{textblock*}{12cm}(0.8cm,-0.9cm)
+%		\begin{beamercolorbox}{section page}
+%			\insertsectionhead
+%		\end{beamercolorbox}
+%	\end{textblock*}
+%}
 
-% === frametitle ======================================================================
 
 \setbeamertemplate{frametitle}{
 	\vspace{1cm}
