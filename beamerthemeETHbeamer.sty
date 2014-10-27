@@ -1,8 +1,8 @@
 %==============================================================================
 %
 % Created by Karl Wuest
-% ETHbeamer 1.0.3
-% 2014-10-25
+% ETHbeamer 1.0.4
+% 2014-10-27
 % ETH corporate design
 % Based on LaTex ETH Presentation Template by Dieter Henning
 %
@@ -99,7 +99,7 @@
 \newcommand*{\ethshiftx}{-118.5mm}   % x shift
 \newcommand*{\ethshifty}{-90.5mm}    % y shift
 \newcommand*{\anchorheight}{\the\paperheight-\ethbarhoch-2mm}
-\newcommand*{\titleanchorheight}{5mm}
+\newcommand*{\titleanchorheight}{7.5mm}
 
 \newcommand*{\ethhintergrundbreite}{119.0mm}	% Breite
 \newcommand*{\ethhintergrundhoehe}{40mm}	    % Hoehe
@@ -158,8 +158,17 @@
 
 
 \newenvironment{titlestyleframe}{
+\setbeamercolor*{frametitle}{fg=white}
+\setbeamercolor*{item}{fg=white}
+\setbeamertemplate{frametitle}{
+	\vspace{5cm}
+	\begin{beamercolorbox}{frametitle}
+		\insertframetitle
+	\end{beamercolorbox}
+}
 \settitlebg
 \begin{frame}
+\color{white}
 }
 {
 \end{frame}
@@ -209,15 +218,22 @@
       \node [shift={(\ethshiftx,\ethshifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
       
       \draw[ETHcolor2,fill=ETHcolor2]%
-(\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight + \ethbaruhh)--(\ethhintergrundbreite+\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight + \ethbaruhh)%
---(\ethhintergrundbreite+\ethbaruhb,\titleanchorheight + \ethbaruhh)--(\ethbaruhb,\titleanchorheight + \ethbaruhh)--(\ethbaruhb,\ethinverserhintergrundhoehe+\titleanchorheight + \ethbaruhh);
+(\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight)--(\ethhintergrundbreite+\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight)%
+--(\ethhintergrundbreite+\ethbaruhb,\titleanchorheight)--(\ethbaruhb,\titleanchorheight)--(\ethbaruhb,\ethinverserhintergrundhoehe+\titleanchorheight);
   \end{tikzpicture}
 }
 }
 
+
+\newcommand{\fgcolor}{black}
+\setbeamercolor{normal text}{fg=\fgcolor}
+
 \newenvironment{inverseframe}{
 \setinvertedbg
+\setbeamercolor*{frametitle}{fg=white}
+\setbeamercolor*{item}{fg=white}
 \begin{frame}
+\color{white}
 }
 {
 \end{frame}
@@ -258,7 +274,7 @@
 {
   \leavevmode%
   \hbox{%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=2ex,left]{fg=black,bg=white}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=3ex,left]{fg=black,bg=white}%
   \ifdeplogo
     \hspace*{4.5mm}\includegraphics[height=1.8ex]{\deplogo}
   \fi
