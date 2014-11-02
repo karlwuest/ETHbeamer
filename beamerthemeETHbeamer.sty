@@ -1,8 +1,8 @@
 %==============================================================================
 %
 % Created by Karl Wuest
-% ETHbeamer 1.0.4
-% 2014-10-27
+% ETHbeamer 1.0.5
+% 2014-11-02
 % ETH corporate design
 % Based on LaTex ETH Presentation Template by Dieter Henning
 %
@@ -92,17 +92,17 @@
 
 % === coloured Bar setting =======================
 
-\newcommand*{\ethbarbreit}{124mm}	% Breite
-\newcommand*{\ethbarhoch}{8.75mm}	% Hoehe		
-\newcommand*{\ethbaruhh}{2.5mm}	    % untere Hoehe
-\newcommand*{\ethbaruhb}{2.5mm}	    % untere Breite
-\newcommand*{\ethshiftx}{-118.5mm}   % x shift
-\newcommand*{\ethshifty}{-90.5mm}    % y shift
-\newcommand*{\anchorheight}{\the\paperheight-\ethbarhoch-2mm}
+\newcommand*{\eth@barbreit}{\paperwidth-4mm}	% Breite
+\newcommand*{\eth@barhoch}{8.75mm}	% Hoehe		
+\newcommand*{\eth@baruhh}{2.5mm}	    % untere Hoehe
+\newcommand*{\eth@baruhb}{2.5mm}	    % untere Breite
+\newcommand*{\eth@shiftx}{9.5mm-\paperwidth}%118.5mm}   % x shift
+\newcommand*{\eth@shifty}{5.5mm-\paperheight}%90.5mm}    % y shift
+\newcommand*{\anchorheight}{\the\paperheight-\eth@barhoch-2mm}
 \newcommand*{\titleanchorheight}{7.5mm}
 
-\newcommand*{\ethhintergrundbreite}{119.0mm}	% Breite
-\newcommand*{\ethhintergrundhoehe}{40mm}	    % Hoehe
+\newcommand*{\eth@hintergrundbreite}{\paperwidth-9mm}	% Breite
+\newcommand*{\eth@hintergrundhoehe}{0.5\paperheight-8mm}%40mm}	    % Hoehe
 
 
 % === default background ============================================================
@@ -110,12 +110,12 @@
 \defbeamertemplate*{background}{xplainframe}{%
     \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	    \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\ethbarhoch + \anchorheight)--   %
-      (\ethbarbreit,\ethbarhoch + \anchorheight)--(\ethbarbreit, \anchorheight)-- %
-      (\ethbarbreit-\ethbaruhb, \anchorheight)-- (\ethbarbreit-\ethbaruhb,\ethbaruhh + \anchorheight) -- %
-      (\ethbaruhb,\ethbaruhh + \anchorheight)--(\ethbaruhb, \anchorheight)-- (0, \anchorheight) -- %
-      (0,\ethbarhoch + \anchorheight); %
-      \node [shift={(\ethshiftx,\ethshifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
+	    \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\eth@barhoch + \anchorheight)--   %
+      (\eth@barbreit,\eth@barhoch + \anchorheight)--(\eth@barbreit, \anchorheight)-- %
+      (\eth@barbreit-\eth@baruhb, \anchorheight)-- (\eth@barbreit-\eth@baruhb,\eth@baruhh + \anchorheight) -- %
+      (\eth@baruhb,\eth@baruhh + \anchorheight)--(\eth@baruhb, \anchorheight)-- (0, \anchorheight) -- %
+      (0,\eth@barhoch + \anchorheight); %
+      \node [shift={(\eth@shiftx,\eth@shifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
   \end{tikzpicture}
 }
 
@@ -133,18 +133,21 @@
 {
     \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-   \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\ethbarhoch + \anchorheight)--   %
-      (\ethbarbreit,\ethbarhoch + \anchorheight)--(\ethbarbreit, \anchorheight)-- %
-      (\ethbarbreit-\ethbaruhb, \anchorheight)-- (\ethbarbreit-\ethbaruhb,\ethbaruhh + \anchorheight) -- %
-      (\ethbaruhb,\ethbaruhh + \anchorheight)--(\ethbaruhb, \anchorheight)-- (0, \anchorheight) -- %
-      (0,\ethbarhoch + \anchorheight); %
-      \node [shift={(\ethshiftx,\ethshifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
-  	\node [shift={(-66.0mm,-115mm + \anchorheight)}]  at (current page.north east)
+
+\node [shift={(-0.5\paperwidth,-\paperheight-19mm + \anchorheight)}]  at (current page.north east)
         %% backside of the ETH dome
-        {\includegraphics[width=\the\paperwidth-9mm,trim={0mm 75mm 0mm 60mm},clip]{title.jpg}};
+        {\includegraphics[width=\the\paperwidth-9mm,trim={0mm 75mm 0mm 58mm},clip]{title.jpg}};  
+  
+   \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\eth@barhoch + \anchorheight)--   %
+      (\eth@barbreit,\eth@barhoch + \anchorheight)--(\eth@barbreit, \anchorheight)-- %
+      (\eth@barbreit-\eth@baruhb, \anchorheight)-- (\eth@barbreit-\eth@baruhb,\eth@baruhh + \anchorheight) -- %
+      (\eth@baruhb,\eth@baruhh + \anchorheight)--(\eth@baruhb, \anchorheight)-- (0, \anchorheight) -- %
+      (0,\eth@barhoch + \anchorheight); %
+      \node [shift={(\eth@shiftx,\eth@shifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
+  	
 	  \hspace{2.5mm}\draw[ETHcolor2,fill=ETHcolor2]%
-	  (0,\ethhintergrundhoehe+\titleanchorheight)--(\ethhintergrundbreite,\ethhintergrundhoehe+\titleanchorheight)%
-	  --(\ethhintergrundbreite,\titleanchorheight)--(0,\titleanchorheight)--(0,\ethhintergrundhoehe+\titleanchorheight); 
+	  (0,\eth@hintergrundhoehe+\titleanchorheight)--(\eth@hintergrundbreite,\eth@hintergrundhoehe+\titleanchorheight)%
+	  --(\eth@hintergrundbreite,\titleanchorheight)--(0,\titleanchorheight)--(0,\eth@hintergrundhoehe+\titleanchorheight); 
   \end{tikzpicture}
 }
 }
@@ -182,12 +185,12 @@
 \setbeamertemplate{background}{%
     \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	    \hspace{2mm}\draw[white,fill=white] (0,\ethbarhoch + \anchorheight)--   %
-      (\ethbarbreit,\ethbarhoch + \anchorheight)--(\ethbarbreit, \anchorheight)-- %
-      (\ethbarbreit-\ethbaruhb, \anchorheight)-- (\ethbarbreit-\ethbaruhb,\ethbaruhh + \anchorheight) -- %
-      (\ethbaruhb,\ethbaruhh + \anchorheight)--(\ethbaruhb, \anchorheight)-- (0, \anchorheight) -- %
-      (0,\ethbarhoch + \anchorheight); %
-      \node [shift={(\ethshiftx,\ethshifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_pos_13.pdf}};%
+	    \hspace{2mm}\draw[white,fill=white] (0,\eth@barhoch + \anchorheight)--   %
+      (\eth@barbreit,\eth@barhoch + \anchorheight)--(\eth@barbreit, \anchorheight)-- %
+      (\eth@barbreit-\eth@baruhb, \anchorheight)-- (\eth@barbreit-\eth@baruhb,\eth@baruhh + \anchorheight) -- %
+      (\eth@baruhb,\eth@baruhh + \anchorheight)--(\eth@baruhb, \anchorheight)-- (0, \anchorheight) -- %
+      (0,\eth@barhoch + \anchorheight); %
+      \node [shift={(\eth@shiftx,\eth@shifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_pos_13.pdf}};%
   \end{tikzpicture}
 }
 }
@@ -204,22 +207,22 @@
 
 % === inverse slide =======================================================
 
-\newcommand*{\ethinverserhintergrundhoehe}{80.15mm}
+\newcommand*{\eth@inverserhintergrundhoehe}{\paperheight-15.85mm}%80.15mm}
 
 \newcommand{\setinvertedbg}{
 \setbeamertemplate{background}{%
     \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-	    \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\ethbarhoch + \anchorheight)--   %
-      (\ethbarbreit,\ethbarhoch + \anchorheight)--(\ethbarbreit, \anchorheight)-- %
-      (\ethbarbreit-\ethbaruhb, \anchorheight)-- (\ethbarbreit-\ethbaruhb,\ethbaruhh + \anchorheight) -- %
-      (\ethbaruhb,\ethbaruhh + \anchorheight)--(\ethbaruhb, \anchorheight)-- (0, \anchorheight) -- %
-      (0,\ethbarhoch + \anchorheight); %
-      \node [shift={(\ethshiftx,\ethshifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
+	    \hspace{2mm}\draw[ETHcolor1,fill=ETHcolor1] (0,\eth@barhoch + \anchorheight)--   %
+      (\eth@barbreit,\eth@barhoch + \anchorheight)--(\eth@barbreit, \anchorheight)-- %
+      (\eth@barbreit-\eth@baruhb, \anchorheight)-- (\eth@barbreit-\eth@baruhb,\eth@baruhh + \anchorheight) -- %
+      (\eth@baruhb,\eth@baruhh + \anchorheight)--(\eth@baruhb, \anchorheight)-- (0, \anchorheight) -- %
+      (0,\eth@barhoch + \anchorheight); %
+      \node [shift={(\eth@shiftx,\eth@shifty + \anchorheight)}]  at (current page.north east){\includegraphics[width=12.8mm]{eth_logo_kurz_neg_13.pdf}};%
       
       \draw[ETHcolor2,fill=ETHcolor2]%
-(\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight)--(\ethhintergrundbreite+\ethbaruhb,\ethinverserhintergrundhoehe + \titleanchorheight)%
---(\ethhintergrundbreite+\ethbaruhb,\titleanchorheight)--(\ethbaruhb,\titleanchorheight)--(\ethbaruhb,\ethinverserhintergrundhoehe+\titleanchorheight);
+(\eth@baruhb,\eth@inverserhintergrundhoehe + \titleanchorheight)--(\eth@hintergrundbreite+\eth@baruhb,\eth@inverserhintergrundhoehe + \titleanchorheight)%
+--(\eth@hintergrundbreite+\eth@baruhb,\titleanchorheight)--(\eth@baruhb,\titleanchorheight)--(\eth@baruhb,\eth@inverserhintergrundhoehe+\titleanchorheight);
   \end{tikzpicture}
 }
 }
