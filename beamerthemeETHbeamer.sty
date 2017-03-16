@@ -1,7 +1,7 @@
 %==============================================================================
 %
 % Created by Karl Wuest
-% ETHbeamer 1.0.6
+% ETHbeamer 1.0.7
 % 2016-06-29
 % ETH corporate design
 % Based on LaTex ETH Presentation Template by Dieter Hennig
@@ -67,8 +67,9 @@
 \colorlet{ETHcolor2}{ETHc}
 
 %\setbeamercolor*{title page header}{fg=white}
-%\setbeamercolor*{title}{fg=white}
+\setbeamercolor*{subtitle}{fg=white}
 \setbeamercolor*{author}{fg=white}
+\setbeamercolor*{institute}{fg=white}
 \setbeamercolor*{date}{fg=white}
 \setbeamercolor*{item}{fg=black}
 \setbeamercolor*{frametitle}{fg=black}
@@ -79,8 +80,10 @@
 
 \setbeamerfont{section page}{size=\LARGE}
 \setbeamerfont{title}{size=\Large,series=\bfseries}
+\setbeamerfont{subtitle}{size=\large,series=\bfseries}
 \setbeamerfont{author}{size=\small}
-\setbeamerfont{date}{size=\Large}
+\setbeamerfont{institute}{size=\scriptsize}
+\setbeamerfont{date}{size=\small}
 
 \newenvironment{xplainframe}{\bgroup\begin{frame}[plain]}{\end{frame}\egroup}
 
@@ -119,7 +122,6 @@
 }
 
 % === title frame background =========================================================
-
 \newcommand{\settitlebg}{
 \setbeamercolor*{title page header}{fg=white}
 \setbeamercolor*{title}{fg=white}
@@ -247,11 +249,28 @@
     \begin{beamercolorbox}{title page header}
       \usebeamerfont{title}\usebeamercolor{title}\inserttitle%
     \end{beamercolorbox}%
-    
-\vspace{0.2cm}
-	    \begin{beamercolorbox}{author}
-	      \usebeamerfont{author}\insertauthor%
-    	\end{beamercolorbox}
+    \ifx\insertsubtitle\@empty
+    \else
+	\begin{beamercolorbox}{subtitle}
+		\usebeamerfont{subtitle}\insertsubtitle%
+	\end{beamercolorbox}
+	\fi   
+	%\vspace{0.2cm}
+	 \begin{beamercolorbox}{author}
+	   \usebeamerfont{author}\insertauthor%
+	 \end{beamercolorbox}
+	 \ifx\insertinstitute\@empty
+	 \else
+	 \begin{beamercolorbox}{institute}
+ 	 	\usebeamerfont{institute}\insertinstitute%
+	 \end{beamercolorbox}
+	 \fi
+	 \ifx\insertdate\@empty
+	 \else
+	 \begin{beamercolorbox}{date}
+	  	 \usebeamerfont{date}\insertdate%
+	 \end{beamercolorbox}
+	 \fi
 \end{textblock*}
 }
 
@@ -278,7 +297,7 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=2ex,right]{fg=black,bg=white}%
     \usebeamerfont{author in head/foot}\insertshortauthor
-    \hspace*{3mm}\insertdate \hspace*{3mm} \insertframenumber{}\hspace*{4.5mm}
+    \hspace*{3mm}\insertshortdate \hspace*{3mm} \insertframenumber{}\hspace*{4.5mm}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -317,5 +336,4 @@
 % === labels
 \newcommand*{\ETHitem}{\raisebox{1pt}{\tikz\fill[sharp
     corners](0,0)rectangle+(3.4pt,3.4pt);}}  
-
 
